@@ -13,13 +13,13 @@ def meta():
 
 @app.route("/api/resume")
 def resume():
-    s3.download_file(S3_BUCKET, "resume.pdf", "/tmp/resume.pdf")
+    s3.download_file(S3_BUCKET, "Resume.pdf", "/tmp/resume.pdf")
     return send_file("/tmp/resume.pdf")
 
 @app.route("/api/upload", methods=["POST"])
 def upload():
     file = request.files["file"]
-    s3.upload_fileobj(file, S3_BUCKET, "resume.pdf")
+    s3.upload_fileobj(file, S3_BUCKET, "Resume.pdf")
     return {"status": "uploaded"}
 
 if __name__ == "__main__":
