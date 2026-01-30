@@ -15,6 +15,7 @@ spec:
       containers:
       - name: backend
         image: 547619294448.dkr.ecr.ap-south-1.amazonaws.com/portfolio-backend:latest
+        imagePullPolicy: Always
         env:
         - name: S3_BUCKET
           value: resume-bucket-name
